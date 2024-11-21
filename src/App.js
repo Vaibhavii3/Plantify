@@ -1,9 +1,10 @@
-import './App.css';
+import React from "react";
+import LandingPage from "./components/LandingPage";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      V
+      <LandingPage />
     </div>
   );
 }
