@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+    const Navigate = useNavigate();
+
     return (
         <div className="bg-gray-100 min-h-screen p-8">
             <header className="flex items-center justify-between p-4 bg-green-500 text-white rounded-lg shadow">
@@ -42,6 +46,7 @@ const Dashboard = () => {
                         </ul>
                     </div>
                 </section>
+                <button onClick={() => Navigate('/explore')} className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600"> Explore Groups and Events </button>
             </main>
         </div>
     );
