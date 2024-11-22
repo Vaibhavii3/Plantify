@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const AuthPage = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -7,13 +8,20 @@ const AuthPage = () => {
         setIsLogin(!isLogin);
     };
 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        Navigate('/dashboard');
+    }
+
+
     return (
         <div className="bg-green-50 min-h-screen flex items-center justify-center">
             <div className="bg-white p-8 rounded-lg shadow-md w-96">
                 <h2 className="text-2xl font-bold text-center text-green-600">
                     {isLogin ? 'Login' : 'Sign Up'}
                 </h2>
-                <form className="mt-6">
+                <form onSubmit={handleFormSubmit} className="mt-6">
                     {!isLogin && (
                         <div className="mb-4">
                             <label className="block text-sm font-medium text-gray-700">
